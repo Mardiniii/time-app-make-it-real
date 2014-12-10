@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/home'
-
+  resources :projects
   devise_for :users
   resources :activities
   root 'welcome#home'
