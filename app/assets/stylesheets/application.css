@@ -17,3 +17,15 @@
 .eslogan{
 	color: white;
 }
+
+#timenav{
+	margin-bottom: 0;
+}
+
+#loginheader{
+	background-color: #1bb45e;
+	margin-bottom: 20px;
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
