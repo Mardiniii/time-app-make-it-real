@@ -1,0 +1,38 @@
+<div class="projects main">
+  <div class="container">
+    
+    <div class="row text-right">
+      <%= link_to 'New Project', new_project_path, :class => "btn btn-info", remote: true %>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <table class="table projects-list">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Time</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          
+          <tbody>              
+            <% @projects.each do |project| %>
+              <tr>
+                <td><%= project.name %></td>
+                <td><%= 'Colocar tiempo' %></td>
+                <td class="text-right"><%= link_to edit_project_path(project) do %>
+                    <span class="glyphicon glyphicon-edit"></span>Edit | 
+                  <% end %>
+                  <%= link_to project_path(project), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-remove"></span>Delete
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>                
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
