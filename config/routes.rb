@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard', to: 'dashboard#show'
   get 'welcome/home'
   resources :projects
   devise_for :users
