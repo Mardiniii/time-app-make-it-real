@@ -26,6 +26,9 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
+    # Falta asignar los datos resultantes a la actividad
+    
+
 
     respond_to do |format|
       if @activity.save
@@ -36,6 +39,7 @@ class ActivitiesController < ApplicationController
         format.json { render json: @activity.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /activities/1

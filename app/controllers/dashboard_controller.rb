@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
 	def show
-		@projects = Project.all
+		@activity = Activity.new
+	    @projects = Project.all
 	end
 end

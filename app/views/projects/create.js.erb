@@ -1,7 +1,0 @@
-// Este archivo se usa para guardar los datos dentro del formulario creando el nuevo objeto, esconder el modal y actualizar la tabla
-$('#project-content-modal').modal('hide');
-$('.projects-list').append('<tr> \
-<td><%= @project.name %></td> \
-<td></td> \
-<td class="text-right"><%= link_to edit_project_path(@project) do %><span class="glyphicon glyphicon-edit"></span>Edit |<% end %><%= link_to project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } do %><span class="glyphicon glyphicon-remove"></span>Delete<% end %></td> \
-</tr>');
