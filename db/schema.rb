@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210182845) do
+ActiveRecord::Schema.define(version: 20141211225248) do
 
   create_table "activities", force: true do |t|
     t.integer  "project_id"
     t.text     "description"
-    t.date     "started_at"
-    t.date     "ended_at"
+    t.datetime "started_at"
+    t.datetime "ended_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
