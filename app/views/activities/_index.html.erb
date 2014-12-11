@@ -1,0 +1,20 @@
+<div class="row">
+  <table class="table activities-list">
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Description</th>
+        <th class="text-center">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.project.name %></td>
+          <td><%= activity.description %></td>
+          <td class="text-center"><%= activity.started_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

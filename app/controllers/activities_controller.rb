@@ -26,20 +26,10 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
-    # @activity.started_at = 
-    # @activity.ended_at = 
-    # Falta asignar los datos resultantes a la actividad
-    
-
-      if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
-        format.json { render :show, status: :created, location: @activity }
-      else
-        format.html { render :new }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
+    @activity.started_at = Time.now
+    if @activity.save
+      redirect_to dashboard_path
     end
-
   end
 
   # PATCH/PUT /activities/1
