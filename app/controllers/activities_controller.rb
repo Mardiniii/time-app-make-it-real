@@ -19,6 +19,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1/edit
   def edit
+
   end
 
   # POST /activities
@@ -26,6 +27,8 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.started_at = Time.now
+    @activity.ended_at = nil
+    @its_working = true
     if @activity.save
       redirect_to dashboard_path
     else 
