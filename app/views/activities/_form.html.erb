@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <%= form_for(@activity) do |f| %>
+  <%= form_for(@activity, remote: true) do |f| %>
     <div class="form-group col-md-3">
       <div class="field form-group">
         <%= collection_select(:activity, :project_id, Project.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
@@ -14,7 +14,11 @@
 
     <div class="col-md-1">
       <div class="actions form-group">
-        <%= f.submit 'Start', :class => 'btn btn-success' %>
+        <% if @activity.new_record? %>
+          <%= f.submit 'Start', :id => 'success', :class => 'btn btn-success' %>  
+        <% else %>
+          <%= f.submit 'Stop', :id => 'success', :class => 'btn btn-danger' %>
+        <% end %>
       </div>
     </div>
   <% end %>

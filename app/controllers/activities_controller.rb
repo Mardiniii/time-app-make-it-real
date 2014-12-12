@@ -28,12 +28,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.started_at = Time.now
     @activity.ended_at = nil
-    @its_working = true
-    if @activity.save
-      redirect_to dashboard_path
-    else 
-      redirect_to dashboard_path, notice: "Activity wasn't created"
-    end
+    @activity.save
   end
 
   # PATCH/PUT /activities/1
